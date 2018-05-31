@@ -33,7 +33,7 @@ public abstract class BehaviourTree : MonoBehaviour
     /// <returns></returns>
     protected abstract Node DefineBehaviour();
 
-    private void Update()
+    private void FixedUpdate()
     {
         _parentNode.Tick(Context);
     }
