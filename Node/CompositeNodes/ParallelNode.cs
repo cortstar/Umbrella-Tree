@@ -3,15 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A node which runs all children at the same time. The node decides it's state when the node success rate is either 
+/// above (sucess) or below (fail) the supplied success rate.
+/// </summary>
 public class ParallelNode : CompositeNode
 {
     private readonly float _requiredSuccesses;
 
     /// <summary>
-    /// A node which runs all children in sequence.
+    /// Build a new ParallelNode.
     /// </summary>
-    /// <param name="requiredSuccessRate">The required ratio of successes:total nodes for this node to succeed, rounded down</param>
-    /// <param name="childNodes">The children of this node</param>
+    /// <param name="requiredSuccessRate">The required success rate as a percent (0-1f)</param>
+    /// <param name="childNodes">The nodes to run in sequence.</param>
     protected ParallelNode(float requiredSuccessRate, params Node[] childNodes) : base(childNodes)
     {
         requiredSuccessRate.ClampTo(new Range(0f, 1f));

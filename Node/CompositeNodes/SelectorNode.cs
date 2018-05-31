@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Runs all children until a success is reached,
+/// Runs all children until a success is reached, and fails if each node has failed.
 /// </summary>
 public class SelectorNode : CompositeNode {
 
