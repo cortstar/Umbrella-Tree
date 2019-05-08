@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public abstract class Node
 {
-	public enum NodeStatus {Running, Fail, Success}
+    public enum NodeStatus {Running, Fail, Success}
     
     public abstract NodeStatus Tick(Context context);
 
